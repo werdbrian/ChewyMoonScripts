@@ -281,7 +281,7 @@ namespace Snitched_Reloaded
 
                 var health = HealthPrediction.GetHealthPrediction(unit, (int) timeToArrive);
 
-                if (Player.GetSpellDamage(unit, spell.Slot) > health)
+                if (Player.GetSpellDamage(unit, spell.Slot) > health && Player.Distance(unit) < spell.Range)
                 {
                     spell.CastSpell(unit);
 
